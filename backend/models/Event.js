@@ -1,6 +1,5 @@
 // Import required modules
 const mongoose = require('mongoose');
-const { v4: uuidv4 } = require('uuid');
 
 /**
  * Form Field Subdocument Schema
@@ -13,7 +12,7 @@ const formFieldSchema = new mongoose.Schema({
    */
   field_id: {
     type: String,
-    default: () => uuidv4()
+    default: () => new mongoose.Types.ObjectId().toString()
   },
 
   /**
