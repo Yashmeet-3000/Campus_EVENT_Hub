@@ -27,7 +27,12 @@ const app = express();
 
 // Middleware
 // Enable CORS for cross-origin requests
-app.use(cors());
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || '*',
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 // Parse JSON request bodies
 app.use(express.json());
