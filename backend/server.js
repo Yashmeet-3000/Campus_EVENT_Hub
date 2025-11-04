@@ -90,7 +90,7 @@ if (process.env.NODE_ENV === 'production') {
   app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
   });
-}
+} else {
   // 404 Handler for development
   app.use((req, res, next) => {
     res.status(404).json({
