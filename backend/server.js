@@ -124,31 +124,38 @@ app.use((err, req, res, next) => {
 // Get PORT from environment variable or use default 5000
 const PORT = process.env.PORT || 5000;
 
-/**
- * Start server function
- * Connects to database and starts listening on specified port
- */
-const startServer = async () => {
-  try {
-    // Connect to MongoDB database
-    await connectDB();
-    
-    // Start Express server
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
+// MongoDB connection promise for serverless
+let dbPromise = null;
+const getDB = () => {
+  if (!dbPromise) {
+    dbPromise = connectDB().catch(err => {
+      console.error('Database connection failed:', err);
+      dbPromise = null;
+      throw err;
     });
-  } catch (error) {
-    console.error('Failed to start server:', error.message);
-    process.exit(1);
   }
+  return dbPromise;
 };
 
-// Start the server
-startServer();
+// For Vercel serverless deployment
+if (process.env.VERCEL) {
+  // Connect to DB on cold start
+  getDB();
+} else {
+  // For local development
+  const startServer = async () => {
+    try {
+      await connectDB();
+      app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+      });
+    } catch (error) {
+      console.error('Failed to start server:', error.message);
+      process.exit(1);
+    }
+  };
+  startServer();
+}
 
-// Handle unhandled promise rejections
-process.on('unhandledRejection', (err) => {
-  console.error(`Unhandled Rejection: ${err.message}`);
-  // Close server and exit process
-  process.exit(1);
-});
+// Export for Vercel
+module.exports = app;
