@@ -40,6 +40,12 @@ app.use(express.json());
 // Parse URL-encoded request bodies
 app.use(express.urlencoded({ extended: true }));
 
+// Serve frontend static files in production
+if (process.env.NODE_ENV === 'production') {
+  const path = require('path');
+  app.use(express.static(path.join(__dirname, '../frontend/dist')));
+}
+
 // Mount API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/events', eventsRoutes);
@@ -78,13 +84,21 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// 404 Handler - Must be after all other routes
-app.use((req, res, next) => {
-  res.status(404).json({
-    success: false,
-    message: `Route ${req.originalUrl} not found`
+// Serve frontend for all non-API routes (SPA)
+if (process.env.NODE_ENV === 'production') {
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
   });
-});
+} else {
+  // 404 Handler for development
+  app.use((req, res, next) => {
+    res.status(404).json({
+      success: false,
+      message: `Route ${req.originalUrl} not found`
+    });
+  });
+}
 
 // Global error handler - Must be last middleware
 app.use((err, req, res, next) => {

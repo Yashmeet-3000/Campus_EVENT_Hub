@@ -5,7 +5,9 @@ import axios from 'axios';
  * Base URL: From environment variable or defaults to localhost
  * Timeout: 10 seconds
  */
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// In production, API is on same domain. In dev, use localhost backend
+const API_BASE_URL = import.meta.env.VITE_API_URL || 
+  (import.meta.env.PROD ? '/api' : 'http://localhost:5000/api');
 console.log('API Base URL:', API_BASE_URL);
 
 const api = axios.create({
