@@ -678,7 +678,12 @@ const NotFound = () => (
 const AuthenticatedLayout = ({ children }) => (
   <div className="flex flex-col min-h-screen">
     <Navbar />
-    <main className="flex-grow">
+    {/* CHANGE: 
+      Added "bg-gray-50" to the <main> tag.
+      This makes the gray background fill the entire content area
+      between the navbar and footer, fixing the "white background" issue.
+    */}
+    <main className="flex-grow bg-gray-50">
       {children}
     </main>
     <footer className="bg-gray-900 text-white py-8 mt-auto">
