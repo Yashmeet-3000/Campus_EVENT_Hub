@@ -538,9 +538,9 @@ const BookmarkedEvents = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
+    <div className="min-h-screen bg-[black] py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Bookmarked Events</h1>
+        <h1 className="text-3xl font-bold text-white mb-6">Bookmarked Events</h1>
         
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
@@ -616,40 +616,40 @@ const BookmarkedEvents = () => {
 const Profile = () => {
   const { user } = useAuth();
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
+    <div className="min-h-screen bg-[black] py-12 px-4">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">My Profile</h1>
-        <div className="bg-white rounded-lg shadow p-8">
+        <h1 className="text-3xl font-bold text-white mb-6">My Profile</h1>
+        <div className="bg-[#242323] rounded-lg shadow p-8">
           <div className="flex items-center space-x-4 mb-6">
             <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl font-bold">
               {user?.name?.charAt(0).toUpperCase()}
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">{user?.name}</h2>
-              <p className="text-gray-600">{user?.email}</p>
+              <h2 className="text-2xl font-bold text-white">{user?.name}</h2>
+              <p className="text-white">{user?.email}</p>
             </div>
           </div>
           <div className="border-t pt-6 space-y-4">
             <div>
-              <label className="text-sm font-medium text-gray-500">Role</label>
-              <p className="text-lg text-gray-900 capitalize">{user?.role}</p>
+              <label className="text-sm font-medium text-white">Role</label>
+              <p className="text-lg text-[#A3A0A0] capitalize">{user?.role}</p>
             </div>
             {user?.phone && (
               <div>
-                <label className="text-sm font-medium text-gray-500">Phone</label>
-                <p className="text-lg text-gray-900">{user.phone}</p>
+                <label className="text-sm font-medium text-white">Phone</label>
+                <p className="text-lg text-[#A3A0A0]">{user.phone}</p>
               </div>
             )}
             {user?.branch && (
               <div>
-                <label className="text-sm font-medium text-gray-500">Branch</label>
-                <p className="text-lg text-gray-900">{user.branch}</p>
+                <label className="text-sm font-medium text-white">Branch</label>
+                <p className="text-lg text-[#A3A0A0]">{user.branch}</p>
               </div>
             )}
             {user?.year_of_study && (
               <div>
-                <label className="text-sm font-medium text-gray-500">Year of Study</label>
-                <p className="text-lg text-gray-900">{user.year_of_study}</p>
+                <label className="text-sm font-medium text-white">Year of Study</label>
+                <p className="text-lg text-[#A3A0A0]">{user.year_of_study}</p>
               </div>
             )}
           </div>
