@@ -140,9 +140,15 @@ router.post('/login', validateUserLogin, async (req, res) => {
       token,
       user: {
         id: user._id,
-        email: user.email,
         name: user.name,
-        role: user.role
+        email: user.email,
+        phone: user.phone,
+        photo_url: user.photo_url,
+        year_of_study: user.year_of_study,
+        branch: user.branch,
+        role: user.role,
+        is_active: user.is_active,
+        created_at: user.created_at
       }
     });
     

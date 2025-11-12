@@ -213,9 +213,9 @@ const MyRegistrations = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
+    <div className="min-h-screen bg-[black] py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">My Registrations</h1>
+        <h1 className="text-3xl font-bold text-white mb-8">My Registrations</h1>
         
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
@@ -226,7 +226,7 @@ const MyRegistrations = () => {
         {/* Pending Team Invitations */}
         {pendingInvitations.length > 0 && (
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Pending Team Invitations</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Pending Team Invitations</h2>
             <div className="space-y-4">
               {pendingInvitations.map((invitation) => (
                 <div key={invitation._id} className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-6 shadow-md">
@@ -277,7 +277,7 @@ const MyRegistrations = () => {
         )}
 
         {/* My Registrations */}
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">My Registrations</h2>
+        <h2 className="text-2xl font-bold text-white mb-4">My Registrations</h2>
         {registrations.length === 0 ? (
           <div className="bg-white rounded-lg shadow p-8 text-center">
             <svg className="w-20 h-20 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
