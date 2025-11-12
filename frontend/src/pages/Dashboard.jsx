@@ -58,7 +58,7 @@ const Dashboard = () => {
             </div>
           </Link>
 
-          <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-xl shadow-lg p-6 text-white">
+          <div className="bg-gradient-to-br from-red-400 to-red-600 rounded-xl shadow-lg p-6 text-white">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-bold mb-1">Student</h3>
