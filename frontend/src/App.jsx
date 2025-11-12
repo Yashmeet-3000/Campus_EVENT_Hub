@@ -683,10 +683,10 @@ const AuthenticatedLayout = ({ children }) => (
       This makes the gray background fill the entire content area
       between the navbar and footer, fixing the "white background" issue.
     */}
-    <main className="flex-grow bg-gray-50">
+    <main className="flex-grow">
       {children}
     </main>
-    <footer className="bg-gray-900 text-white py-8 mt-auto">
+    <footer className="bg-[#242323] text-white py-8 mt-auto">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <p className="text-gray-400">© 2025 Campus Event Hub. All rights reserved.</p>
       </div>

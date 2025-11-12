@@ -10,7 +10,7 @@ const Dashboard = () => {
   const { user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[black]">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12 px-4">
         <div className="max-w-7xl mx-auto">
@@ -27,7 +27,7 @@ const Dashboard = () => {
       <div className="max-w-7xl mx-auto px-4 -mt-8 mb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Link to="/my-registrations" className="group">
-            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:scale-105">
+            <div className="bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:scale-105">
               <div className="flex items-center">
                 <div className="bg-blue-100 rounded-full p-3 mr-4">
                   <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,15 +35,15 @@ const Dashboard = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">My Registrations</h3>
-                  <p className="text-sm text-gray-600">View your event registrations</p>
+                  <h3 className="text-lg font-bold text-white group-hover:text-blue-600 transition">My Registrations</h3>
+                  <p className="text-sm text-white">View your event registrations</p>
                 </div>
               </div>
             </div>
           </Link>
 
           <Link to="/profile" className="group">
-            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:scale-105">
+            <div className="bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:scale-105">
               <div className="flex items-center">
                 <div className="bg-purple-100 rounded-full p-3 mr-4">
                   <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,8 +51,8 @@ const Dashboard = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition">My Profile</h3>
-                  <p className="text-sm text-gray-600">Update your information</p>
+                  <h3 className="text-lg font-bold text-white group-hover:text-purple-600 transition">My Profile</h3>
+                  <p className="text-sm text-white">Update your information</p>
                 </div>
               </div>
             </div>
@@ -77,8 +77,8 @@ const Dashboard = () => {
       {/* Events Section */}
       <div className="max-w-7xl mx-auto px-4 pb-12">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Upcoming Events</h2>
-          <p className="text-gray-600">Browse and register for campus events</p>
+          <h2 className="text-3xl font-bold text-white mb-2">Upcoming Events</h2>
+          <p className="text-white">Browse and register for campus events</p>
         </div>
 
         <EventsList />

@@ -98,7 +98,7 @@ const EventsList = () => {
   return (
     <div className="space-y-8">
       {/* Filter Buttons */}
-      <div className="bg-white rounded-lg shadow-md p-4">
+      <div className="bg-[#241F1F] rounded-lg shadow-md p-4">
         <div className="flex flex-wrap gap-3">
           {eventTypes.map((type) => (
             <button
@@ -117,7 +117,7 @@ const EventsList = () => {
       </div>
 
       {/* Events Count */}
-      <div className="text-gray-700">
+      <div className="text-white">
         <p className="text-lg font-medium">
           {events.length === 0 ? 'No events found' : `${events.length} event${events.length !== 1 ? 's' : ''} found`}
         </p>
