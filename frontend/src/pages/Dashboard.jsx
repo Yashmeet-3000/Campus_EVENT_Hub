@@ -12,7 +12,7 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-[black]">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12 px-4">
+      <div className="bg-gradient-to-t from-red-900 to-gray-900 text-white py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Welcome back, {user?.name}! 👋
