@@ -11,9 +11,22 @@ const Navbar = () => {
   const { isAuthenticated, user, logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const redirectdis=()=>{
+    if (!isAuthenticated) return "/";
+    
+    // Check if the user is an admin or society head
+    if (user?.role === 'admin' || user?.role === 'society_head') {
+      return "/society/dashboard";
+    }
+    
+    
+    return "/dashboard";
+  }
+
   /**
    * Handle logout
    */
+  
   const handleLogout = () => {
     logout();
     setIsMobileMenuOpen(false);
@@ -40,7 +53,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <Link
-            to={isAuthenticated ? "/dashboard" : "/"}
+            to={redirectdis()}
             className="flex items-center space-x-2 group"
             onClick={closeMobileMenu}
           >
@@ -212,7 +225,7 @@ const Navbar = () => {
                       onClick={closeMobileMenu}
                       className="block px-4 py-2 hover:bg-blue-800 rounded-lg transition duration-200"
                     >
-                      My Registrations
+                      Bookmarked Events
                     </Link>
                   </>
                 )}
