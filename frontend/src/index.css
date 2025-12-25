@@ -29,6 +29,8 @@ body {
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  background-color: #111827; /* This is a dark "gray-900" black */
+  color: #e5e7eb;
 }
 
 #root {
